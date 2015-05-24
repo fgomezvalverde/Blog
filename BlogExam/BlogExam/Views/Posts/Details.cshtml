@@ -1,0 +1,46 @@
+﻿@model BlogExam.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="col-md-11">
+            <div class="row">
+                <div class="post-title">
+                    <h2>
+                        @Model.TITLE
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="post-author">
+                        <span>Author:</span>&nbsp;@Html.DisplayFor(modelItem => Model.AUTHOR) 
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    @* Call to split the tags, a pasted *@
+                    @foreach (var tag in Model.GetTags()) 
+                    {
+                        <a href="#" class="tag">@tag</a>
+                    }
+                </div>
+                <div class="col-md-3">
+                    <div class="posted-date">
+                        Fecha: @Html.DisplayFor(modelItem => Model.DATE)
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-body">
+
+                @Model.BODY
+            </div>
+        <div class="col-md-4">
+            <p>
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+        </div>
+</div>

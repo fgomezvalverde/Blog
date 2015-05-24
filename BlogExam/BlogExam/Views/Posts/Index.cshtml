@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<BlogExam.Models.Post>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("New Post", "Create")
+</p>
+<div class="container">
+    <div class="col-md-11">
+        @* order the post by his DATE *@
+        @foreach (var item in Model.OrderBy(x => x.DATE))           
+        {
+
+            <div class="row">
+                <div class="post-title">
+                    <h2>
+                        @* Call details from the POST *@
+                        @Html.ActionLink(item.TITLE, "Details", "Posts", new { id = item.Id }, null)         
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="post-author">
+                        <span>Author:</span>&nbsp;@Html.DisplayFor(modelItem => item.AUTHOR)
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    @* Call to split the tags, a pasted *@
+                    @foreach (var tag in item.GetTags())  
+                    {
+                        <a href="#" class="tag">@tag</a>
+                    }
+                </div>
+                <div class="col-md-3">
+                    <div class="posted-date">
+                        Fecha: @Html.DisplayFor(modelItem => item.DATE)
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-body">
+
+                @item.BODY.Substring(0, item.BODY.IndexOf('\n') + 1) @Html.ActionLink("Leer mas...", "Details", "Posts", new { id = item.Id }, null)
+
+            </div>
+
+             <hr>
+
+        }
+
+        @* PAGINATION: creates the the pages considering the amount of POSTS, using actual page *@
+        <div class="center">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = Model.PageSize }))
+
+            Showing @Model.FirstItemOnPage to @Model.LastItemOnPage of @Model.TotalItemCount Posts
+        </div>
+    </div>
+</div>

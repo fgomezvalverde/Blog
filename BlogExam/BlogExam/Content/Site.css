@@ -1,0 +1,162 @@
+﻿/*=================================TYPICAL CSS Configuration h1,h2,etc===========================================*/
+
+html{height: 100%;}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: 100%;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+p
+{ margin: 0px;
+  padding: 0px 0px 16px 0px;
+  line-height: 1.7em; }
+
+h1, h2, h3, h4, h5, h6 
+{ font: normal 179% 'century gothic', arial, sans-serif;
+  color: #43423F;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;}
+
+h2
+{ font: normal 170% 'century gothic', arial, sans-serif;
+  color: #0AB6F6;
+  text-align: center;
+}
+
+h3
+{ font: normal 125% 'century gothic', arial, sans-serif;}
+
+h4, h5, h6
+{ margin: 0;
+  padding: 0 0 5px 0;
+  font: normal 120% arial, sans-serif;
+  color: #0AB6F6;}
+
+h5, h6
+{ font: italic 95% arial, sans-serif;
+  color: #888;}
+
+h6
+{ color: #362C20;}
+
+/*=========================================Post Style========================================*/
+post .post-title
+{ font-size: 22px;
+  text-align: center;}
+
+post .post-author
+{ 			font-size: 14px;
+			text-align: left;}
+
+.post .posted-date
+{ float: right; }
+
+
+.post .post-body
+{ margin-top: 25px; clear: both; border: 2px solid black ; }
+
+.post .post-foot
+{ float: right; }
+
+div.feeddiv {
+  float: right; 
+  margin-bottom: 20px; 
+  text-align: center;
+  width: 200px;
+}
+
+/*=========================================TAGS Style========================================*/
+#site_content
+{ width: 858px;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+  padding: 10px 20px 40px 20px;
+  background: #F6F6F0 url(images/back.png) repeat-y;
+  border: 15px solid #FFF;} 
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: crimson; 
+}
+
+/*=========================================SIDE BAR Style========================================*/
+
+.sidebar {
+    float:right;
+    height: 1200px;
+  width: 15%;
+  padding: 20px 10px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+background:#BDBDBD;
+}
+
